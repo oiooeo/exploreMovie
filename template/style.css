@@ -29,6 +29,7 @@ main {
   color: #ffffff;
 }
 
+/* 검색 부분 */
 .search {
   width: 100%;
   padding: 20px 0px;
@@ -59,6 +60,7 @@ main {
   cursor: pointer;
 }
 
+/* 영화 카드 부분 */
 .searchCards {
   background-color: bisque;
 }

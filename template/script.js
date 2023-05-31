@@ -1,3 +1,4 @@
+// TMDB API KEY
 const options = {
   method: "GET",
   headers: {
@@ -9,6 +10,8 @@ const options = {
 
 let resultArray = [];
 
+// Top Rated 영화 목록 받기
+// index.html id="movies" 부분에 카드 추가 (forEach 사용)
 fetch(
   "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
   options
