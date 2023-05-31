@@ -11,17 +11,24 @@
 
   <body>
     <header>
-      <h1 class="title">영화를 찾아보세요</h1>
-      <h3>Movie Explore</h3>
+      <h1 class="title">🎬 Movie Explore</h1>
+      <h3>영화를 찾아보세요</h3>
     </header>
-    <main>
-      <h1>여기는 메인</h1>
-      <p class="subsubject">
-        "영화란 지루한 부분이 커트된 인생이다" - 알프레드 히치콕
-      </p>
 
-      <div class="container"></div>
-      <div class="buttonWrapper"><button class="more">더 보기</button></div>
+    <main>
+      <form class="search" onsubmit="handleSearch(event)">
+        <p>영화 검색 🍿</p>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="영화 제목을 검색해 보세요"
+        />
+        <button type="submit" id="search-btn"><b>검색</b></button>
+      </form>
+
+      <div class="searchCards" id="searchResults"></div>
+
+      <div class="cards" id="movies"></div>
     </main>
   </body>
 </html>
