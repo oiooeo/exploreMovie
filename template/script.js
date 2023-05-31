@@ -8,7 +8,9 @@ const options = {
   },
 };
 
-let resultArray = [];
+const resultArray = [];
+const searchInput = document.getElementById("search_input");
+const searchButton = document.getElementById("search_btn");
 
 // Top Rated 영화 목록 받기
 // index.html id="movies" 부분에 카드 추가 (forEach 사용)
@@ -19,36 +21,63 @@ fetch(
   .then((response) => response.json())
   .then((response) => {
     response.results.forEach((movie) => {
-      resultArray.push({
-        id: movie.id,
-        title: movie.title,
-        img: movie.poster_path,
-        desc: movie.overview,
-        rate: movie.vote_average,
-      });
+      resultArray.push(movie);
 
-      let id = movie["id"];
-      let title = movie["title"];
-      let img = movie["poster_path"];
-      let desc = movie["overview"];
-      let rate = movie["vote_average"];
-
-      let temp_html = `<div class="movie-card" onclick="alert('${title}의 영화 ID는 ${id} 입니다');">
+      let temp_html = `<div class="movie-card" onclick="alert('${movie.title}의 영화 ID는 ${movie.id} 입니다');">
                         <img
                           class="movie_img"
-                          src="https://image.tmdb.org/t/p/original${img}"
+                          src="https://image.tmdb.org/t/p/original${movie.poster_path}"
                           alt=""
                         />
-                        <p class="movie_name"><b>${title}</b></p>
-                        <p class="movie_desc">${desc}</p>
-                        <p class="movie_rate">평점 | <b>${rate}</b></p>
+                        <p class="movie_name"><b>${movie.title}</b></p>
+                        <p class="movie_desc">${movie.overview}</p>
+                        <p class="movie_rate">평점 | <b>${movie.vote_average}</b></p>
                       </div>`;
 
       document
         .querySelector("#movies")
         .insertAdjacentHTML("beforeend", temp_html);
     });
+
+    // 검색
+    searchButton.addEventListener("click", () => {
+      document.querySelector("#movies").innerHTML = "";
+
+      const searchTerm = searchInput.value.toLowerCase();
+      const filteredMovies = resultArray.filter((resultArray) =>
+        resultArray.title.toLowerCase().includes(searchTerm)
+      );
+
+      if (filteredMovies.length >= 1) {
+        document
+          .querySelector(".info-card")
+          .setAttribute("style", "display: flex");
+        document.querySelector(".info-card").textContent =
+          "검색 결과 : " + filteredMovies.length + "개";
+
+        filteredMovies.forEach((movie) => {
+          let search_html = `<div class="movie-card" onclick="alert('${movie.title}의 영화 ID는 ${movie.id} 입니다');">
+                              <img
+                                class="movie_img"
+                                src="https://image.tmdb.org/t/p/original${movie.poster_path}"
+                                alt=""
+                              />
+                              <p class="movie_name"><b>${movie.title}</b></p>
+                              <p class="movie_desc">${movie.overview}</p>
+                              <p class="movie_rate">평점 | <b>${movie.vote_average}</b></p>
+                            </div>`;
+
+          document
+            .querySelector("#movies")
+            .insertAdjacentHTML("beforeend", search_html);
+        });
+      } else {
+        document
+          .querySelector(".info-card")
+          .setAttribute("style", "display: flex");
+        document.querySelector(".info-card").textContent =
+          "검색 결과가 없습니다";
+      }
+    });
   })
   .catch((err) => console.error(err));
-
-console.log(resultArray);

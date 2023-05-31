@@ -13,12 +13,13 @@ body {
 }
 
 header {
-  padding: 20px;
+  padding: 20px 0px;
   background-color: rgb(255, 161, 161);
   text-align: center;
   line-height: 40px;
   color: #313131;
   width: 100%;
+  cursor: pointer;
 }
 
 .title {
@@ -42,7 +43,7 @@ main {
   margin-bottom: 20px;
 }
 
-#search-input {
+#search_input {
   margin-left: 10px;
   margin-right: 5px;
   width: 30%;
@@ -51,7 +52,7 @@ main {
   font-size: medium;
 }
 
-#search-btn {
+#search_btn {
   background-color: rgb(255, 161, 161);
   color: #313131;
   font-size: medium;
@@ -92,6 +93,15 @@ main {
 .movie-card:hover {
   box-shadow: 0 3px 10px rgba(255, 161, 161, 0.7),
     0 3px 10px rgba(255, 161, 161, 0.7);
+}
+
+/* 검색 결과 설명 */
+.info-card {
+  display: none;
+  justify-content: center;
+  color: rgb(255, 161, 161);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .movie_img {

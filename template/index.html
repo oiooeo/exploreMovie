@@ -5,30 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type="text/javascript" src="script.js"></script>
-    <title>Document</title>
+    <title>Movie Explore</title>
   </head>
 
   <body>
-    <header>
+    <!-- 헤더 클릭 시 창 새로고침 -->
+    <header onclick="location.reload()">
       <h1 class="title">🎬 Movie Explore</h1>
       <h3>영화를 찾아보세요</h3>
     </header>
 
     <main>
-      <form class="search" onsubmit="movieSearch(event)">
+      <!-- submit 후 새로고침 방지 => onsubmit="return false" -->
+      <form id="search" class="search" name="search" onsubmit="return false">
         <p>영화 검색 🍿</p>
-        <input
-          type="text"
-          id="search-input"
-          placeholder="영화 제목을 검색해 보세요"
-        />
-        <button type="submit" id="search-btn"><b>검색</b></button>
+        <input type="text" id="search_input" autocomplete="off" />
+        <button type="submit" id="search_btn"><b>검색</b></button>
       </form>
 
-      <div class="searchCards" id="searchResults"></div>
-
+      <!-- 검색 결과가 없을 때 보이게 -->
+      <h2 class="info-card">검색 결과</h2>
+      <!-- 영화 카드들 들어가는 부분 -->
       <div class="cards" id="movies"></div>
     </main>
   </body>
+  <script type="text/javascript" src="script.js"></script>
 </html>
