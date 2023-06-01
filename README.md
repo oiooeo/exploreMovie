@@ -1,5 +1,5 @@
 <div align="center">
-# 🎬 MovieExplore 🍿 ☕
+	<h1> 🎬 MovieExplore 🍿 </h1>
 </div>
 
 <div align="center">
@@ -13,7 +13,7 @@
 <br>
 
 <div align="center">
-### 🖤 https://oiooeo.github.io/exploreMovie/ 🩷
+	<h2> 🖤 https://oiooeo.github.io/exploreMovie/ 🩷 </h2>
 </div>
 
 <br>
