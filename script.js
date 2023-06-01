@@ -80,7 +80,7 @@ fetch(
           .querySelector(".info-card")
           .setAttribute("style", "display: flex");
         document.querySelector(".info-card").textContent =
-          "검색 결과가 없습니다";
+          "일치하는 영화가 없습니다";
       }
     });
   })
