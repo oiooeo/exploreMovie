@@ -111,12 +111,13 @@ main {
 }
 
 .movie_name {
-  padding-top: 7px;
+  padding-top: 5px;
   font-family: "DM Serif Display", serif;
   font-size: 20px;
   line-height: 23px;
   height: 50px;
   align-items: center;
+  text-align: center;
 }
 
 .movie_name,
