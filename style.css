@@ -112,6 +112,7 @@ main {
 
 .movie_name {
   padding-left: 10px;
+  padding-right: 10px;
   font-family: "DM Serif Display", serif;
   font-size: 20px;
 }
