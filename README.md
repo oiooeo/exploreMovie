@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-<h3>🖤<a href="https://oiooeo.github.io/exploreMovie/"><span style="color:violet"> exploreMovie <span></a>🩷</h3>
+<h3>🖤<a href="https://oiooeo.github.io/exploreMovie/"> exploreMovie </a>🩷</h3>
 </div>
 
 <br>
