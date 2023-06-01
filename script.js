@@ -23,7 +23,7 @@ fetch(
     response.results.forEach((movie) => {
       resultArray.push(movie);
 
-      let temp_html = `<div class="movie-card" onclick="alert('${movie.title}의 영화 ID는 ${movie.id} 입니다');">
+      let temp_html = `<div class="movie-card" onclick="alert('영화 <${movie.title}>의 ID는 ${movie.id} 입니다');">
                         <img
                           class="movie_img"
                           src="https://image.tmdb.org/t/p/original${movie.poster_path}"
@@ -56,7 +56,7 @@ fetch(
           "검색 결과 : " + filteredMovies.length + "개";
 
         filteredMovies.forEach((movie) => {
-          let search_html = `<div class="movie-card" onclick="alert('${movie.title}의 영화 ID는 ${movie.id} 입니다');">
+          let search_html = `<div class="movie-card" onclick="alert('영화 <${movie.title}>의 ID는 ${movie.id} 입니다');">
                               <img
                                 class="movie_img"
                                 src="https://image.tmdb.org/t/p/original${movie.poster_path}"
