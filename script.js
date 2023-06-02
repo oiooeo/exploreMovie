@@ -66,7 +66,7 @@ fetch(
                                 alt=""
                               />
                               <p class="movie_name"><b>${movie.title}</b></p>
-                              <p class="movie_rate">평점 → <b>${movie.vote_average}</b></p>
+                              <p class="movie_rate">✦ 평점 <b>${movie.vote_average}</b> ✦</p>
                               <p class="movie_desc">${movie.overview}</p>
                             </div>`;
 
